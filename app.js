@@ -10,8 +10,11 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var hello = require('./routes/hello');
+// STUDENT ADDED VIA SLIDE 38
+var project = require('./routes/project')
 // Example route
 // var user = require('./routes/user');
+
 
 var app = express();
 
@@ -38,6 +41,8 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', index.view);
 app.get('/hello/:userName', hello.view);
+// STUDENT ADDED VIA SLIDE 39 - IT WAS UNCLEAR WHERE TO PUT THIS ONE
+app.get('/project/:name', project.viewProject);
 // Example route
 // app.get('/users', user.list);
 
